@@ -11,4 +11,4 @@ Until we're approved by package manager you'll have to manually grab the files f
 
 * `Shift + Command + P` to launch to open Sublime's command bar
 * Goto `Package Control: Add Repository`
-* Enter `git@github.com:qualialabs/reval-sublime.git`
+* Enter `https://github.com/qualialabs/reval-sublime.git`
