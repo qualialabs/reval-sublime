@@ -1,2 +1,13 @@
-# reval-sublime
-Sublime Text 3 plugin for Meteor Reval
+### Live Reloads with Meteor
+
+This plugin is for use in combination with [Reval](https://github.com/qualialabs/reval) to allow for instant reloads with Meteor. 
+
+### Meteor Setup
+
+1) Install the Atmosphere package `meteor add qualia:reval`
+
+### Sublime Setup
+Until we're approved by package manager you'll have to manually grab the files from this repo
+1) `Shift + Command + P` to launch to open Sublime's command bar
+2) Goto `Package Control: Add Repository`
+3) Enter `git@github.com:qualialabs/reval-sublime.git`
