@@ -5,7 +5,7 @@ import urllib.request
 import re
 
 
-settings = sublime.load_settings("Meteor Reload.sublime-settings")
+settings = sublime.load_settings("MeteorReload.sublime-settings")
 
 class meteorReload(sublime_plugin.EventListener):
     pending = 0

@@ -1,0 +1,13 @@
+##### Setting up
+
+1) Install meteor plugin
+
+meteor add qualia:reval
+
+2) Set local path for this plugin
+
+Preferences -> Package Settings -> Meteor Reload -> "Settings - User"
+
+This path should correspond to the root of your meteor project locally.
+
+3) Now try modifying a file in your meteor server, and enjoy the live updates!

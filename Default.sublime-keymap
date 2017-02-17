@@ -1,0 +1,6 @@
+[
+    {
+        "caption": "Meteor Reload: Sync File",
+        "command": "meteor_reload"
+    }
+]
