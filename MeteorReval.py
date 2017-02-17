@@ -5,26 +5,28 @@ import urllib.request
 import re
 
 
-settings = sublime.load_settings("MeteorReload.sublime-settings")
+settings = sublime.load_settings("MeteorReval.sublime-settings")
 
-class meteorReload(sublime_plugin.EventListener):
+class meteorReval(sublime_plugin.EventListener):
     pending = 0
 
     def handleTimeout(self, view):
       self.pending = self.pending - 1
       if self.pending == 0:
-        view.run_command("meteor_reload")
+        view.run_command("meteor_reval")
 
     def on_modified_async(self, view):
       if settings.get('reload_on_modified') is True:
         required_path = settings.get('required_path')
         required_regex = settings.get('required_regex')
         file_path = view.file_name()
+        print (file_path)
         if (file_path and file_path.find(required_path) >= 0 and re.search(required_regex, file_path)):
           self.pending = self.pending + 1
+          print ('here')
           sublime.set_timeout(functools.partial(self.handleTimeout, view), settings.get('reload_debounce'))
 
-class meteorReloadCommand(sublime_plugin.TextCommand):
+class meteorRevalCommand(sublime_plugin.TextCommand):
     def run(self, view):
         if (self.view.file_name()):
           path = settings.get('path')
