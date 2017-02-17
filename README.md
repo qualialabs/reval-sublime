@@ -1,6 +1,6 @@
-## Live Reloads with Meteor
+## Meteor Reval - Instant Reloading with Sublime & Meteor
 
-This plugin is for use in combination with [Reval](https://github.com/qualialabs/reval) to allow for instant reloads with Meteor. 
+This plugin is for use in combination with [Reval](https://github.com/qualialabs/reval) to allow for instant reloads with Meteor.
 
 ### Meteor Setup
 
@@ -9,6 +9,6 @@ This plugin is for use in combination with [Reval](https://github.com/qualialabs
 ### Sublime Setup
 Until we're approved by package manager you'll have to manually grab the files from this repo
 
-* `Shift + Command + P` to launch to open Sublime's command bar
-* Goto `Package Control: Add Repository`
-* Enter `https://github.com/qualialabs/reval-sublime.git`
+* Choose "download zip" from GitHub
+* In sublime go to preferences -> browse packages
+* Extract repository into package directory

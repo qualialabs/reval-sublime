@@ -17,27 +17,26 @@ class meteorReval(sublime_plugin.EventListener):
 
     def on_modified_async(self, view):
       if settings.get('reload_on_modified') is True:
-        required_path = settings.get('required_path')
+
+        required_path  = settings.get('required_path')
         required_regex = settings.get('required_regex')
-        file_path = view.file_name()
-        print (file_path)
+        file_path      = view.file_name()
+
         if (file_path and file_path.find(required_path) >= 0 and re.search(required_regex, file_path)):
           self.pending = self.pending + 1
-          print ('here')
           sublime.set_timeout(functools.partial(self.handleTimeout, view), settings.get('reload_debounce'))
 
 class meteorRevalCommand(sublime_plugin.TextCommand):
     def run(self, view):
         if (self.view.file_name()):
-          path = settings.get('path')
-          file_path = self.view.file_name().replace(path, '')
-          hostname = settings.get('hostname')
-          port = settings.get('port')
-          endpoint = settings.get('endpoint')
-          url = 'http://' + hostname + ':' + str(port) + endpoint + '?filePath=' + file_path
+          path      = settings.get('path')
+          hostname  = settings.get('hostname')
+          port      = settings.get('port')
+          endpoint  = settings.get('endpoint')
+          url       = 'http://' + hostname + ':' + str(port) + endpoint + '?filePath=' + self.view.file_name().replace(path, '')
           print (url)
-          data = self.view.substr(sublime.Region(0, self.view.size()))
-          request = HttpAsyncRequest(url)
+          data      = self.view.substr(sublime.Region(0, self.view.size()))
+          request   = HttpAsyncRequest(url)
           request.set_content(str.encode(data))
           request.set_header('Content-type', 'text/plain')
           request.send()

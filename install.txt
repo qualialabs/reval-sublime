@@ -6,7 +6,7 @@ meteor add qualia:reval
 
 2) Set local path for this plugin
 
-Preferences -> Package Settings -> Meteor Reload -> "Settings - User"
+Preferences -> Package Settings -> Meteor Reval -> "Settings - User"
 
 This path should correspond to the root of your meteor project locally.
 
