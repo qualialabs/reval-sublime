@@ -1,0 +1,27 @@
+{
+  // Whether data should be transmitted when file is modified
+  "reload_on_modified": true,
+
+  // The amount of time in MS to debounce when using reload_on_modified
+  "reload_debounce": 300,
+
+  // The hostname for the machine that you are using
+  "hostname": "localhost",
+
+  // The port your meteor server is running
+  "port": 3000,
+
+  // The name of the server endpoint
+  "endpoint" : "/reval",
+
+  // Path to the root of the meteor server (windows be sure to escape backslashes, i.e. "C:\\My\\Project")
+  "path": "",
+
+  // Only files matching this local path will sync (windows paths require escaped backslashes)
+  // This can include partial paths, for example '/app', will match '/my/special/app'
+  "required_path": "",
+
+  // Only files matching this regex will be required (used to specify file types or other conditions)
+  "required_regex": "\\.(html|less|css|js)$",
+
+}
