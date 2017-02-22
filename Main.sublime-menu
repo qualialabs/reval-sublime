@@ -17,7 +17,7 @@
                         [
                             {
                                 "command": "open_file",
-                                "args": {"file": "${packages}/MeteorReval/MeteorReval.sublime-settings"},
+                                "args": {"file": "${packages}/Meteor Reval/MeteorReval.sublime-settings"},
                                 "caption": "Settings – Default"
                             },
                             {
@@ -28,7 +28,7 @@
                             {
                                 "command": "open_file",
                                 "args": {
-                                    "file": "${packages}/MeteorReval/Default (Windows).sublime-keymap",
+                                    "file": "${packages}/Meteor Reval/Default (Windows).sublime-keymap",
                                     "platform": "Windows"
                                 },
                                 "caption": "Key Bindings – Default"
@@ -36,7 +36,7 @@
                             {
                                 "command": "open_file",
                                 "args": {
-                                    "file": "${packages}/MeteorReval/Default (OSX).sublime-keymap",
+                                    "file": "${packages}/Meteor Reval/Default (OSX).sublime-keymap",
                                     "platform": "OSX"
                                 },
                                 "caption": "Key Bindings – Default"
@@ -44,7 +44,7 @@
                             {
                                 "command": "open_file",
                                 "args": {
-                                    "file": "${packages}/MeteorReval/Default (Linux).sublime-keymap",
+                                    "file": "${packages}/Meteor Reval/Default (Linux).sublime-keymap",
                                     "platform": "Linux"
                                 },
                                 "caption": "Key Bindings – Default"
