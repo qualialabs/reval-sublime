@@ -4,7 +4,7 @@ This plugin is for use in combination with [Reval](https://github.com/qualialabs
 
 ### Meteor Setup
 
-1) Install the Atmosphere package `meteor add qualia:reval`
+1. Install the Atmosphere package `meteor add qualia:reval`
 
 ### Sublime Setup
 
