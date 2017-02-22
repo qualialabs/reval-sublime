@@ -7,8 +7,8 @@ This plugin is for use in combination with [Reval](https://github.com/qualialabs
 1) Install the Atmosphere package `meteor add qualia:reval`
 
 ### Sublime Setup
-Until we're approved by package manager you'll have to manually grab the files from this repo
 
-* Choose "download zip" from GitHub
-* In sublime go to preferences -> browse packages
-* Extract repository into package directory
+1) Install [Sublime Package Manager](https://packagecontrol.io/installation)
+2) Type "command + P" then type "Install Package" into prompt
+3) Type "Meteor Reval"
+4) Configure User Settings in `Preferences -> Package Settings -> Meteor Reval`
