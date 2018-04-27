@@ -1,6 +1,6 @@
 [
     {
-        "caption": "Meteor Reload",
-        "command": "meteor_reload"
+        "caption": "Meteor Reval",
+        "command": "meteor_reval"
     }
 ]
