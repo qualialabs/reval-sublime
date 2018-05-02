@@ -4,8 +4,11 @@ import sublime_plugin
 import urllib.request
 import re
 
+settings = None
 
-settings = sublime.load_settings("MeteorReval.sublime-settings")
+def plugin_loaded():
+    global settings
+    settings = sublime.load_settings("MeteorReval.sublime-settings")
 
 class meteorReval(sublime_plugin.EventListener):
     pending = 0
