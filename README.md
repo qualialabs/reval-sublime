@@ -6,12 +6,27 @@ This plugin is for use in combination with [Reval](https://github.com/qualialabs
 
 1. Install the Atmosphere package `meteor add qualia:reval`
 
-### Sublime Setup
+### Sublime Global Setup
 
 1. Install [Sublime Package Manager](https://packagecontrol.io/installation)
 2. Type "command + P" then type "Install Package" into prompt
 3. Type "Meteor Reval"
 4. Configure User Settings in `Preferences -> Package Settings -> Meteor Reval`
+
+### Sublime Per-Project Setup
+
+You can specify settings in your `.sublime-project` file to modify the host name for each project using reval
+* Add a block in your `.sublime-project` with overrides for the project like
+```json
+	"settings": {
+		"meteor_reval": {
+  		"reload_on_modified" : true,
+		  "hostname": "some.hostname",
+		  "required_path": "\\\\Special\\Path",
+		  "path": "\\\\Full\\Path\\To\App",
+		}
+	}
+```
 
 ## How to Develop
 
