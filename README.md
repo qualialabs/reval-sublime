@@ -18,14 +18,14 @@ This plugin is for use in combination with [Reval](https://github.com/qualialabs
 You can specify settings in your `.sublime-project` file to modify the host name for each project using reval
 * Add a block in your `.sublime-project` with overrides for the project like
 ```json
-	"settings": {
-		"meteor_reval": {
-  		"reload_on_modified" : true,
-		  "hostname": "some.hostname",
-		  "required_path": "\\\\Special\\Path",
-		  "path": "\\\\Full\\Path\\To\\App",
-		}
-	}
+"settings": {
+  "meteor_reval": {
+    "reload_on_modified" : true,
+    "hostname": "some.hostname",
+    "required_path": "\\\\Special\\Path",
+    "path": "\\\\Full\\Path\\To\\App",
+  }
+}
 ```
 
 ## How to Develop
