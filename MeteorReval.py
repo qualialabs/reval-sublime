@@ -4,38 +4,65 @@ import sublime_plugin
 import urllib.request
 import re
 
+PROJECT_NAME = 'meteor_reval'
+
 settings = None
+
+RUN_COMMAND = PROJECT_NAME
+PROJECT_SETTINGS_KEY = PROJECT_NAME
 
 def plugin_loaded():
     global settings
     settings = sublime.load_settings("MeteorReval.sublime-settings")
 
+
+""" Pattern taken from
+    <https://github.com/jonlabelle/SublimeJsPrettier/blob/8d731207666f003ca31ec3646c9ce3373c214105/JsPrettier.py>
+"""
+
+def get_project_setting(key):
+    project_settings = sublime.active_window().active_view().settings()
+    if not project_settings:
+        return None
+    project_setting = project_settings.get(PROJECT_SETTINGS_KEY)
+    if project_setting:
+        if key in project_setting:
+            return project_setting[key]
+    return None
+
+def get_setting(key, default_value=None):
+    value = settings.get(key, default_value)
+    project_value = get_project_setting(key)
+    if project_value is None:
+        return value
+    return project_value
+
+
 class meteorReval(sublime_plugin.EventListener):
     pending = 0
 
-    def handleTimeout(self, view):
+    def handle_timeout(self, view):
       self.pending = self.pending - 1
       if self.pending == 0:
-        view.run_command("meteor_reval")
+        view.run_command(RUN_COMMAND)
 
     def on_modified_async(self, view):
-      if settings.get('reload_on_modified') is True:
-
-        required_path  = settings.get('required_path')
-        required_regex = settings.get('required_regex')
+      if get_setting('reload_on_modified') is True:
+        required_path  = get_setting('required_path')
+        required_regex = get_setting('required_regex')
         file_path      = view.file_name()
 
         if (file_path and file_path.find(required_path) >= 0 and re.search(required_regex, file_path)):
           self.pending = self.pending + 1
-          sublime.set_timeout(functools.partial(self.handleTimeout, view), settings.get('reload_debounce'))
+          sublime.set_timeout(functools.partial(self.handle_timeout, view), get_setting('reload_debounce'))
 
 class meteorRevalCommand(sublime_plugin.TextCommand):
     def run(self, view):
         if (self.view.file_name()):
-          path      = settings.get('path')
-          hostname  = settings.get('hostname')
-          port      = settings.get('port')
-          endpoint  = settings.get('endpoint')
+          path      = get_setting('path')
+          hostname  = get_setting('hostname')
+          port      = get_setting('port')
+          endpoint  = get_setting('endpoint')
           url       = 'http://' + hostname + ':' + str(port) + endpoint + '?filePath=' + self.view.file_name().replace(path, '')
           print (url)
           data      = self.view.substr(sublime.Region(0, self.view.size()))
