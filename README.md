@@ -23,7 +23,7 @@ You can specify settings in your `.sublime-project` file to modify the host name
   		"reload_on_modified" : true,
 		  "hostname": "some.hostname",
 		  "required_path": "\\\\Special\\Path",
-		  "path": "\\\\Full\\Path\\To\App",
+		  "path": "\\\\Full\\Path\\To\\App",
 		}
 	}
 ```
