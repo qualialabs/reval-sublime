@@ -16,8 +16,11 @@ This plugin is for use in combination with [Reval](https://github.com/qualialabs
 ## How to Develop
 
 1. Download zip file of this repo
-2. Extract to your sublime `user/` folder in a sub directory
+2. Extract to your `Packages/MeteorReval`
 3. Remove any existing version installed from package control
-4. Reload Sublime. Sublime will now use the local package in `user/`
+4. Reload Sublime. Sublime will now use the local package in `Packages/`
 5. Make modifications locally to `MeteorReval.py`
 
+Package Folder Location
+* Windows: `%APPDATA%\Sublime Text 3`
+* OS X: `~/Library/Application Support/Sublime Text 3`
