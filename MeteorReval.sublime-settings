@@ -24,4 +24,8 @@
   // Only files matching this regex will be required (used to specify file types or other conditions)
   "required_regex": "\\.(html|less|css|js)$",
 
+  // specify a regex to be replaced from all paths
+  // this can be useful if files from outside project directory should be revaled
+  "path_start_regex": "",
+
 }

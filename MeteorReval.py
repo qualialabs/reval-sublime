@@ -59,14 +59,20 @@ class meteorReval(sublime_plugin.EventListener):
 class meteorRevalCommand(sublime_plugin.TextCommand):
     def run(self, view):
         if (self.view.file_name()):
-          path      = get_setting('path')
-          hostname  = get_setting('hostname')
-          port      = get_setting('port')
-          endpoint  = get_setting('endpoint')
-          url       = 'http://' + hostname + ':' + str(port) + endpoint + '?filePath=' + self.view.file_name().replace(path, '')
+          path           = get_setting('path')
+          pathStartRegEx = get_setting('path_start_regex')
+          hostname       = get_setting('hostname')
+          port           = get_setting('port')
+          endpoint       = get_setting('endpoint')
+
+          print (pathStartRegEx)
+          fileName       = self.view.file_name().replace(path, '')
+          fileName       = re.sub(pathStartRegEx, '', fileName)
+
+          url            = 'http://' + hostname + ':' + str(port) + endpoint + '?filePath=' + fileName
           print (url)
-          data      = self.view.substr(sublime.Region(0, self.view.size()))
-          request   = HttpAsyncRequest(url)
+          data           = self.view.substr(sublime.Region(0, self.view.size()))
+          request        = HttpAsyncRequest(url)
           request.set_content(str.encode(data))
           request.set_header('Content-type', 'text/plain')
           request.send()
