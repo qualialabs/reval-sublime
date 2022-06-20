@@ -65,7 +65,6 @@ class meteorRevalCommand(sublime_plugin.TextCommand):
           port           = get_setting('port')
           endpoint       = get_setting('endpoint')
 
-          print (pathStartRegEx)
           fileName       = self.view.file_name().replace(path, '')
           fileName       = re.sub(pathStartRegEx, '', fileName)
 
